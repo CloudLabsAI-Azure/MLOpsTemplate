@@ -19,9 +19,11 @@ To accomplish these goals, you will perform the following:
 
 
 ## Task 1:
-1. In Azure machine learning workspace studio, go to **Compute** under **Manage** and click **Compute clusters**.
+1. In Azure machine learning workspace studio, go to **Compute (1)** under **Manage** and click **Compute clusters (2)**.
 
-1. Click **+New**.
+1. Click **+ New (3)**.
+
+   ![](./images/mlops-new1.png)
 
 1. Under **Create compute cluster**, on Virtual Machine tab leave the default values and click **Next**.
 

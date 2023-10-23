@@ -56,7 +56,7 @@ To illustrate how the process works, the notebook was refactored into a feature 
    git branch
    ```
    
-   >**Note:** Check in your GitHub account whether the new branch(yourname-dev) is created or not, if not then run this command to push the changes to your GitHub account.
+   >**Note:** Check in your GitHub account whether the new branch (yourname-dev) is created or not, if not then run this command to push the changes to your GitHub account.
 
    ```bash
    git push --set-upstream origin yourname-dev

@@ -61,9 +61,11 @@ In this step, you will clone the above-forked repository into a development envi
 
 1. In **aml<inject key="Deployment ID"></inject>** machine learning workspace, click on **Launch Studio** button.
 
-1. Go to __Compute__ > __Compute Instance__.
+   ![](./images/launchaml.png) 
 
-1. Click new __Terminal link__.
+1. Go to __Compute (1)__ > __Compute Instance (2)__. Select the ellipses __(...)__, next to the applications, and click  __Terminal (3)__.
+
+   ![](./images/MLpos-compute.png)
 
 1. Clone __your__ 'MLOpsTemplate' repo in the Terminal of Compute Instance.
 
@@ -115,6 +117,8 @@ In this step, you will clone the above-forked repository into a development envi
         
    After copy the __code__ and go to the link, [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). 
 
+   >**Note:** On the **Pick an account** page, select the <inject key="AzureAdUserEmail"></inject>. Select **Continue** on **Are you trying to sign in to Microsoft Azure CLI?** page.
+
 1. Install az ml CLI v2.
     
    - Run the following command to see the `az extension`
@@ -159,7 +163,9 @@ In this step, you will clone the above-forked repository into a development envi
     
    ![](./images/run_mlopsworkshop_azcli006.png)
    
-   After copying the __code__ and go to the link, [https://microsoft.com/devicelogin (https://microsoft.com/devicelogin). 
+   After copy the __code__ and go to the link, [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). 
+
+   >**Note:** On the **Pick an account** page, select the <inject key="AzureAdUserEmail"></inject>. Select **Continue** on **Are you trying to sign in to Microsoft Azure CLI?** page.
         
 1. Configure the subscription and Azure Machine Learning Workspace.
    
@@ -171,11 +177,11 @@ In this step, you will clone the above-forked repository into a development envi
     
    >**Note:** You can find the __Subscription Name__,__Resource Group Name__, __Azure Machine Learning Name__ and __the Location__ from the user profile in the AML Studio.
     
-   ![](./images/run_mlopsworkshop_azcli008.png)
+   ![](./images/mlops-subs.png)
 
    >**Note:** The results should look like the following:
     
-   ![](./images/run_mlopsworkshop_azcli007.png)
+   ![](./images/results.png)
 
    >**Note:** Once done, **leave the terminal open**. **Do not terminate it** and head to the next task.
 
@@ -189,17 +195,19 @@ The last two tasks include:
 
 You are going to create PAT to allow your code access to your personal git repo.
 
-1. To make PAT, you need to go to Settings of your account, **NOT** repo setting.
+1. Navigate back to the GitHub page, to make PAT, you need to go to Settings of your account, **NOT** repo setting.
 
-   ![](./images/mlpos-img3.png)
+   ![](./images/settings.png)
 
 1. From the settings, find and __click__ '_<> Developer settings_' menu at the bottom left corner of your screen.
 
-   ![](./images/mlpos-img4.png)
+   ![](./images/developersettings.png)
 
 1. __Click__ on '_Personal access tokens_' (1)> '_Tokens (classic)_' (2) and then __click__ on '_Generate new token_' (3)> '_Generate new token (classic)_' (4).
 
-   ![](./images/mlpos-img5.png)
+   ![](./images/generate.png)
+
+   >**Note:** Enter the password GitHub account password for the authentication.
 
 1. Enter a **Note** and check for '_repo_' and '_workflow_' for the scope and then __click__ '_Generate Token_' at the bottom of your screen.
 
@@ -214,16 +222,16 @@ You are going to create PAT to allow your code access to your personal git repo.
    - The URL of your repo will look like this.
 
    ```text
-   https://github.com/{YOURACCOUNT}}/MLOpsTemplate
+   https://github.com/{YOURACCOUNT}/MLOpsTemplate
    ```
 
 1. From your repo __click__ '_Settings_'.
 
-   ![](./images/mlpos-img8.png)
+   ![](./images/settings1.png)
 
-1. Find a menu '_Secrets_' on the left side of menu, and __click__ 'Actions'. After that __Click__ 'New repository secret'.
+1. Find a menu '_Secrets and variables_' on the left side of menu, and __click__ 'Actions'. After that __Click__ 'New repository secret'.
 
-   ![](./images/mlpos-img9.png)
+   ![](./images/secrets.png)
 
 1. Type `PERSONAL_ACCESS_TOKEN_GITHUB` for the name of the secret, paste the token you copied from the PAT section and click **Add Secret**.
 
@@ -243,13 +251,13 @@ From this section, you'll add the SP information to your repo. The SP informatio
    https://github.com/{YOURACCOUNT}}/MLOpsTemplate
    ```
 
-1. From your repo __click__ '_Setting_'.
+1. From your repo __click__ '_Settings_'.
 
-   ![](./images/mlpos-img8.png)
+   ![](./images/settings1.png)
 
-1. Find a menu '_Secrets_' on the left side of menu, and __click__ 'Actions'. After that __Click__ 'New repository secret'
+1. Find a menu '_Secrets and variables_' on the left side of menu, and __click__ 'Actions'. After that __Click__ 'New repository secret'
 
-   ![](./images/mlpos-img9.png)
+   ![](./images/secrets.png)
 
 1. Type `AZURE_SERVICE_PRINCIPAL` for the name of the secret.
 
