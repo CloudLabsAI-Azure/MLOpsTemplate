@@ -19,7 +19,7 @@ To illustrate how the process works, the notebook was refactored into a feature 
 
 ## Task 1:
 
-> **Note:** You can run the following tasks on Compute Instance in your Azure Machine Learning. You can use __Jupyter__ or __VSCode__ or __Terminal__.
+> **Note:** You can run the following tasks on Compute Instance in your Azure Machine Learning. You can use __JupyterLab__ or __Jupyter__ or __VSCode__.
 
 1. Familiarize yourself with the steps in this jupyter
   notebook. This showcases the overall data engineering and model building

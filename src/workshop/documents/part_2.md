@@ -29,7 +29,7 @@ To accomplish these goals, you will perform the following:
 
 1. Under **Advanced settings**, give compute name as `cpu-cluster` leave the default values and **Create**.
 
-1. Go to the workshop folder. (Skip this step if you are already in the workshop folder from the previous task)
+1. Select **Notebooks** under **Authoring** section. Go to the workshop folder. (Skip this step if you are already in the workshop folder from the previous task)
    
    >**Action Item:** Run the following code snippet.
 
@@ -52,7 +52,7 @@ To accomplish these goals, you will perform the following:
    az ml job create -f core/data_engineering/feature_engineering.yml 
    ```
    
-   >- Go to Azure ML Studio and locate the run detail for this experiment.
+   >**Note:** Select **Jobs** under **Assets**. Select **All jobs**. Select the **feature_engineering** job and locate the run detail for this experiment.
 
 1. Run the ```ml_training.py``` module under the ```training``` folder by following the steps below:
    
@@ -62,7 +62,7 @@ To accomplish these goals, you will perform the following:
    az ml job create -f core/training/ml_training.yml 
    ```
    
-   >- Go to Azure ML Studio and locate the run detail for this experiment.
+   >**Note:** Select **Jobs** under **Assets**. Select **All jobs**. Select the **ml_training** job and locate the run detail for this experiment.
 
 1. Run the ```ml_evaluating.py``` module under the ```evaluating``` folder by following the steps below:
    
@@ -72,7 +72,11 @@ To accomplish these goals, you will perform the following:
    az ml job create -f core/evaluating/ml_evaluating.yml 
    ```
    
-   >- Go to Azure ML Studio and locate the run detail for this experiment. Observe the ML metrics and how the model was logged to Azure ML's model registry.
+   >**Note:** Select **Jobs** under **Assets**. Select **All jobs**. Select the **ml_evaluating** job and locate the run detail for this experiment. Observe the ML metrics and how the model was logged to Azure ML's model registry.
+
+   >**Note:** Please wait for the '_feature_engineering_', '_ml_training_', and '_ml_evaluating_' job statuses to show **Completed**.
+
+1. Once the statuses are in completed state, select **Notebooks**, to perform the further steps.
 
 1. Create a pipeline that runs the feature_engineering, training and evaluation in one workflow.
    
@@ -82,7 +86,9 @@ To accomplish these goals, you will perform the following:
    az ml job create -f core/pipelines/training_pipeline.yml 
    ```
    
-   >- Go to the run detail at Azure ML studio and observe the relationship graph among the modules. (See chart below as well.)
+   >**Note:** Select **Jobs** under **Assets**. Select **All jobs**. Select the **Training_pipeline** and observe the relationship graph among the modules. (See chart below as well.)
+
+   >**Note:** Please wait for the **Training_pipeline** job status to show **Completed**.
 
 1. Discuss this question: Why should we run the modules both individually and together in a pipeline? 
 
@@ -92,10 +98,12 @@ To accomplish these goals, you will perform the following:
    
    >- In AML Studio, under Authoring navigate to the **Notebooks > MLOpsTemplate > src > workshop > core > scoring**
    
-   >- Select **endpoint.yml** and **deployment.yml** under scoring folder
+   >- Select **endpoint.yml** under scoring folder.
    
    >- Update the ```endpoint.yml``` file by updating the name of the endpoint (should be a unique name) and press Ctrl+S to save the change (If prompted for authentication first click **Authenticate** then press Ctrl+S.)
    
+   >- Select **deployment.yml** under scoring folder.
+
    >- Update the ```deployment.yml``` file by updating the name of the endpoint (should be the same name you defined just above) and Press Ctrl+S to save the change.
    
    > -  Move back to the notebook Terminal and create your endpoint by running the following command:
@@ -104,10 +112,12 @@ To accomplish these goals, you will perform the following:
    az ml online-endpoint create --file core/scoring/endpoint.yml 
    ```
    
-   >**Note:** All the above jobs will take up to 20 minutes to get executed completely. You can also check the job status by navigating to Jobs under Assets. **Wait until the completion of all the jobs and then only move to the next step.**
+   >**Note:** Select **Jobs (1)**, under **Assets**. Select **All Jobs (2)**. Now, check the **Status (3)** for all the jobs, it's in completed state. If any one of these are not in completed state, wait until the completion of the job and then only move to the next step.
    
-   ![Jobs status](images/upd-jobs.png)
+   ![Jobs status](images/jobs.png)
  
+   >**Note:** Go back to **Notebooks** terminal.
+   
 1. Create a green deployment by running the following command:
   
    ```bash 

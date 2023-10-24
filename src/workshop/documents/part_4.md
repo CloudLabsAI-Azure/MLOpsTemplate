@@ -76,9 +76,8 @@ After learning about how GitHub can be leveraged for MLOps, your team decides to
 7. At this point you have made some changes to your code and have pushed the changes to your branch on the repository. In order for us to make these changes permanent and take them eventually to deployment and production, we need to place these changes in the "integration" branch.
 
     >**Action Items:**
-    >- Go to your browser and go to your repository. 
+    >- Go the your browser and go to your repository. 
     >- Click on the "pull requests" tab and Click on "New pull request". 
-    >
     >- Set the `base` branch to `integration` and the `compare` branch to `yourname-dev`.
     >- IMPORTANT NOTE: Make sure the integration branch you choose as the base is pointing to your `forked` repository and NOT the Microsoft MLOpsTemplate repository.
     >- Click on "Create pull request".
@@ -91,6 +90,8 @@ After learning about how GitHub can be leveraged for MLOps, your team decides to
 
     The CI workflow has multiple steps, including setting up the Python version, installing the libraries needed, logging in to Azure running the training model pipeline and evaluating the model. As a part of this workflow, the updated model from our current changes is compared to our best previous model and if it performs better it passes the evaluation step (more details below).
 
+    >**Note:** If it shows you **Workflows aren't being run on this forked repository**, select **I understand my workflows, go ahead and enable them**. Select **Run workflow**, and select the **integration** branch, and select **Run workflow**.
+    
     You can check out different steps of the training pipeline under: ```/src/workshop/pipelines/training_pipeline.yml```. 
     
     >**Note:** At this point, it takes about 10 minutes for the pipeline to run.

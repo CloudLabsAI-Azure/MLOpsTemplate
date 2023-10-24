@@ -32,7 +32,9 @@ The goal of this section is to get a fully functional CD pipeline that will:
     > 1. Open up the `workshop_cd.yml` file in your repo under _yourname-dev branch_ (.github/workflows location)
     > 2. Update the 'creds: ${{ secrets...' section in this file to set up your secret name. Follow the instructions in this file annotated with #setup.
 
-    > **Note:** Please refer to [Use the Azure login action with a service principal secret](https://docs.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-portal%2Cwindows#use-the-azure-login-action-with-a-service-principal-secret) to create the proper Azure Credentials if you haven't done so already (you should have already defined such secret to complete the CI part of the workshop, i.e. [Part 4].
+    >**Note:** If the name is already updated and matches with the name of the Azure Credentials secret, you can leave as it is.
+
+    > **Note:** Please refer to [Use the Azure login action with a service principal secret](https://docs.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-portal%2Cwindows#use-the-azure-login-action-with-a-service-principal-secret) to create the proper Azure Credentials if you haven't done so already (you should have already defined such secret to complete the CI part of the workshop, i.e. [Part 4]).
 
 3. We will now configure our Azure ML deployments and the GitHub workflow which will automate these deployments.
 
@@ -46,14 +48,14 @@ The goal of this section is to get a fully functional CD pipeline that will:
  
 1. Open up the `endpoint.yml` file in your repo under _yourname-dev branch_ `src/workshop/core/scoring/endpoint.yml` 
 
-2. Edit `endpoint.yml` file to set up the name of your endpoint. This name needs to be unique within the region you are deploying into as the endpoint name is part of the endpoint URI. Look for #setup in that file. (Add your **Deployment ID** as a suffix to your endpoint name to make it unique.)
+2. Edit `endpoint.yml` file to set up the name of your endpoint. This name needs to be unique within the region you are deploying into as the endpoint name is part of the endpoint URI. Look for #setup in that file. (Add your **Deployment ID** as a suffix to your endpoint name to make it unique.), select **Commit changes...**. On the **Commit changes** page, select **Commit changes**.
 
-3. Now navigate to `src/workshop/core/scoring/deployment.yml` and edit `deployment.yml` to set up the name of the endpoint this deployment belongs to the same name you defined just above. Look for #setup in that file.
+3. Now navigate to `src/workshop/core/scoring/deployment.yml` and edit `deployment.yml` to set up the name of the endpoint this deployment belongs to the same name you defined just above. Look for #setup in that file. Select **Commit changes...**. On the **Commit changes** page, select **Commit changes**.
 
 Now let's configure the GitHub Actions workflow file that controls the CD process located at `.github/workflows/workshop_cd.yml`
 
 **Action Item:**
-- Edit `workshop_cd.yml` to set up your Azure resource group name and Azure ML workspace name which are being passed as parameters to a set of custom GitHub Actions. Look for #setup and follow the instructions in the file.
+- Edit `workshop_cd.yml` to set up your Azure resource group name and Azure ML workspace name which are being passed as parameters to a set of custom GitHub Actions. Look for #setup and follow the instructions in the file. Select **Commit changes...**. On the **Commit changes** page, select **Commit changes**.
     
 
     As you've now noticed, 3 actions control the overall CD flow at the end of the workflow definition. Let's have a look into them in more detail, feel free to open their code and review how this logic has been implemented. The key considerations for each file are as follows:
@@ -76,7 +78,7 @@ Now let's configure the GitHub Actions workflow file that controls the CD proces
 
 1. Commit your configuration changes and push them up to Git Hub in your own development branch.
 
-2. Go to the GitHub UI under 'Actions', select 'workshop_cd', and trigger it to run now on your own development branch.
+2. Go to the GitHub under 'Actions', select 'workshop_cd', select **Run workflow** drop-down, select your own development branch, and then select **Run workflow**.
 
 3. Once triggered, click on it to open up the details and monitor its execution.
 
@@ -86,6 +88,8 @@ Now let's configure the GitHub Actions workflow file that controls the CD proces
 
     GitHub offers an easy way to define such a policy.
 
+    >**Note:** Wait for the pipeline to successfully run.
+    
     > **Action Items:**
     > - Go to your Github repo, and click on 'Settings'
     > - Click on 'Branches' under 'Code and automation'

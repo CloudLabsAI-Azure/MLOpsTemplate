@@ -11,7 +11,7 @@
 
 ## Task 1. Setup Github Account and Settings
 
-1. From the new browser tab, Sign in to the [Github](https://github.com/login) using the **GitHub Credentials** provided under the **Environment details > Licenses** tab.
+1. Open a new tab. From the new browser tab, Sign in to the [Github](https://github.com/login) using the **GitHub Credentials** provided under the **Environment details > Licenses** tab.
  
    ![](./images/github-06.png) 
   
@@ -25,11 +25,11 @@
 
 1. Once you sign in, check for the latest email from GitHub. It could be in either the Focused or Other section of the Inbox.
 
-   ![](./images/github-02.png) 
+   ![](./images/inbox.png) 
  
 1. Here, I can see the latest mail from GitHub is under the Other section. So open the mail and copy the Verification code.
 
-   ![](./images/github-03.png) 
+   ![](./images/mlops-github.png) 
 
 1. Paste the verification code in the Device verification code field. As soon as you paste the code, it will go to the verifying state.
 
@@ -57,15 +57,19 @@ In this step, you will clone the above-forked repository into a development envi
 
 ###  Using Compute Instance in AML
 
-1. In the Azure portal, go to ***mlops-rg-<inject key="Deployment ID"></inject>*** resource group and open **aml<inject key="Deployment ID"></inject>** machine learning workspace.
+1. In the Azure portal, under **Search resources, services and docs** search and select **Resource groups**. Select ***mlops-rg-<inject key="Deployment ID"></inject>*** resource group and open **aml<inject key="Deployment ID"></inject>** machine learning workspace.
 
 1. In **aml<inject key="Deployment ID"></inject>** machine learning workspace, click on **Launch Studio** button.
 
    ![](./images/launchaml.png) 
 
+   >**Note:** If it asks you to **Pick an account** select **ODL_User <inject key="Deployment ID"></inject>**.
+
 1. Go to __Compute (1)__ > __Compute Instance (2)__. Select the ellipses __(...)__, next to the applications, and click  __Terminal (3)__.
 
    ![](./images/MLpos-compute.png)
+
+   >**Note:** If **What's New in Notebooks page appears**, select **Close**.
 
 1. Clone __your__ 'MLOpsTemplate' repo in the Terminal of Compute Instance.
 
@@ -209,7 +213,7 @@ You are going to create PAT to allow your code access to your personal git repo.
 
    >**Note:** Enter the password GitHub account password for the authentication.
 
-1. Enter a **Note** and check for '_repo_' and '_workflow_' for the scope and then __click__ '_Generate Token_' at the bottom of your screen.
+1. Enter a **Note** '_mlpos_*, and check for '_repo_' and '_workflow_' for the scope and then __click__ '_Generate Token_' at the bottom of your screen.
 
    ![](./images/mlpos-img6.png)
 
