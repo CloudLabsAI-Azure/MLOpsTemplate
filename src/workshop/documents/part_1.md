@@ -19,7 +19,7 @@ To illustrate how the process works, the notebook was refactored into a feature 
 
 ## Task 1:
 
-> **Note:** You can run the following tasks on Compute Instance in your Azure Machine Learning. You can use __Jupyter__ or __VSCode__ or __Terminal__.
+> **Note:** You can run the following tasks on Compute Instance in your Azure Machine Learning. You can use __JupyterLab__ or __Jupyter__ or __VSCode__.
 
 1. Familiarize yourself with the steps in this jupyter
   notebook. This showcases the overall data engineering and model building
@@ -56,7 +56,7 @@ To illustrate how the process works, the notebook was refactored into a feature 
    git branch
    ```
    
-   >**Note:** Check in your GitHub account whether the new branch(yourname-dev) is created or not, if not then run this command to push the changes to your GitHub account.
+   >**Note:** Check in your GitHub account whether the new branch (yourname-dev) is created or not, if not then run this command to push the changes to your GitHub account.
 
    ```bash
    git push --set-upstream origin yourname-dev
